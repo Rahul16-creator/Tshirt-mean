@@ -1,0 +1,96 @@
+<br><br>
+
+
+<div class="loader" *ngIf="loading"></div>
+
+<div class="custom" *ngIf="!edit && !loading">
+    
+    <h2 style="text-align: center;">Total {{products.length}} Products  Available</h2>
+
+
+<br><br>
+<a routerLink="/admin" class="btn btn-outline-success btn-sm pull-left">Admin-page</a>
+	<div class="clearfix"></div>
+
+<br><br><table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">image</th>
+        <th scope="col">Product-Name</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Upload Image</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of products">
+      <tr>
+        <td><img  src="{{product.img}}" style="width: 60px; height: 60px;"  alt="not working"></td>
+        <td>{{product.name}}</td>
+        <td>{{product.stock}}</td>
+          <td><button class="btn btn-primary"><a routerLink="/upload-image/{{product.id}}" style="color: white; text-decoration: none;">choose img</a></button></td>
+        <td> <button class="btn btn-success" (click)="onUpdate(product.id)">Update</button></td>
+        <td><button class="btn btn-danger" (click)="onDelete(product.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+
+<!-- update product -->
+
+
+<div class="container" *ngIf="edit && !loading">
+
+  <div class="d-flex justify-content-center h-100">
+  <div class="card">
+          
+    <div class="card-header" >
+              
+        <!-- <div class="alert alert-success" >
+          This is a secondary alert—check it out!
+          </div>
+
+          <div class="alert alert-danger" >
+          This is a secondary alert—check it out!
+          </div> -->
+
+      <h3>Update Products</h3>
+    </div>
+    <div class="card-body" *ngFor="let product of updateproducts" >
+      <form (ngSubmit)="onsubmit(product.id)" #f='ngForm'>
+        <div class="input-group form-group">
+          <input type="text" name="name"  class="form-control" value="hello" style="color: black;" placeholder={{product.name}}   required ngModel>
+        </div>
+        <div class="input-group form-group">
+          <textarea rows="5" name="description" class="form-control" style="color: black;" placeholder={{product.description}} required ngModel > </textarea>
+        </div>
+        <div class="input-group form-group">
+          <input type="number" name="price"  class="form-control" style="color: black;" placeholder={{product.price}}   required ngModel>
+        </div>
+        <div class="input-group form-group">
+          <input type="number" name="stock"  class="form-control" style="color: black;" placeholder={{product.stock}}   required ngModel>
+        </div>
+
+        <!-- <div class="input-group form-group">
+          <input type="file" name="file"  class="form-control" style="color: black;" placeholder={{product.name}}    ngModel>
+        </div> -->
+
+        <select  class="form-control"  name="categoty"> 
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+          </select>
+        <br>
+        <div class="form-group">
+          <button style="cursor: pointer; background-color: #E74292; color: wheat; font-weight: bold;" type="submit"   [disabled]="f.invalid"  class="form-control"> Update-products  </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br><br>
+</div> 

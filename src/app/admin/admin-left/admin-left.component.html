@@ -1,0 +1,34 @@
+
+
+
+   <div>
+
+
+     <ul class="list-group">
+        <li class="list-group-item">
+            <br>
+                <img src="{{pic}}" style="width:140px ; height: 140px; border-radius: 50px; margin-bottom:5px ;"  alt="">
+         </li>         
+        <li class="list-group-item">
+            <form >
+                  <input type="file" name="image"   (change)="onFile($event.target.files)"  required> <br><br>
+                <button style="cursor: pointer; background-color: #E74292; color: wheat; font-weight: bold;" type="submit"   (click)="onsubmit()" > Upload  </button>
+            </form>
+        </li>
+        <li class="list-group-item">
+            <a style="color: #EAF0F1; text-decoration: none;"  routerLink="/create-product">Create-Product</a>
+        </li>
+        <li class="list-group-item">
+            <a  style="color: #EAF0F1; text-decoration: none;" routerLink="/create-category">Create-Category</a>
+        </li>
+        <li class="list-group-item">
+            <a style="color: #EAF0F1; text-decoration: none;"routerLink="/manage-category">Manage-Category</a>
+        </li>
+        <li class="list-group-item">
+            <a style="color: #EAF0F1; text-decoration: none;" routerLink="/manage-product">Manage-Products</a>
+        </li>
+    </ul>
+   </div>
+    
+   
+   

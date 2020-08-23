@@ -1,0 +1,72 @@
+<br><br><br>
+
+<h1 style="color: white; text-align: center;"  >Settings</h1>
+
+
+<div class="container mt-5" >
+
+    <div class="row" style="width:100%">
+        
+        <!-- Profile Settings-->
+        <div class="col-lg-8 pb-5" >
+            
+            <form (ngSubmit)="onSubmit()" #f="ngForm">
+
+                <div class="row">
+                
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            
+                            <label style="color: white;" for="account-fn">Name</label>
+                            <input class="form-control" name="name" type="text" id="account-fn" value="{{name}}" ngModel>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label style="color: white;" for="account-email">E-mail Address</label>
+                            <input class="form-control" name="email" type="email" id="account-email" value="{{email}}" ngModel disabled>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label  style="color: white;" for="account-pass">New Password</label>
+                            <input class="form-control" name="newpassword" type="password" id="account-pass" ngModel>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label style="color: white;" for="account-confirm-pass">Confirm Password</label>
+                            <input class="form-control" name="confirmpassword" type="password" id="account-confirm-pass" ngModel>
+                            <span  *ngIf="error" style="color: red; text-align:center">Password not matched</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label  style="color: white;" for="account-pass">Shipping Adress</label>
+                            <textarea class="form-control" row="5" name="address" type="password" id="account-pass" placeholder="{{address}}"  ngModel>{{address}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label style="color: white;" for="account-confirm-pass">City</label>
+                            <input class="form-control" name="city" type="text" id="account-confirm-pass" value="{{city}}" ngModel>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <hr class="mt-2 mb-3">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            
+                            <button  class="btn btn-style-1 btn-primary" type="submit" [disabled]="!f.dirty">Update Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            
+        </div>
+    </div>
+</div>

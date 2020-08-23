@@ -1,0 +1,27 @@
+
+
+
+<div *ngIf="loading">
+    <br><br>
+    <div class="loader"></div>
+</div>
+
+
+<div *ngIf="!loading">
+<app-curosel></app-curosel>
+
+    <div  class="container" *ngFor="let product of products">
+            <img style="width: 230px; height: 200px; border-radius: 10px;"  src="{{product.img}}" alt="{{product.name}}">
+            <h3 class="name" >{{product.name}}</h3>
+            <p class="description" >{{product.description}}</p>
+            <p class="price"> <i class="fa fa-inr" aria-hidden="true"></i> {{product.price}} </p>
+        <button  (click)="onCart(product.id,product.name,product.description,product.price,product.img)"> Add-to-cart</button>
+    </div>
+
+    <br><br>
+
+    <button  style="width: 100%; border-radius: 0px; margin-bottom: 7px;"   (click)="topFunction()" id="myBtn" title="Go to top">Back-to-top</button>
+
+    <app-footer></app-footer>
+
+</div>

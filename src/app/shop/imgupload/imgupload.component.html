@@ -1,0 +1,40 @@
+<div class="container">
+
+	<a routerLink="/manage-product" class="btn btn-outline-success btn-sm pull-left">Inventory</a>
+	<div class="clearfix"></div>
+	
+    <div class="d-flex justify-content-center h-100">
+		<div class="card">
+            
+			<div class="card-header" >
+                
+					<!-- <div class="alert alert-success" >
+						This is a secondary alert—check it out!
+					  </div>
+
+					  <div class="alert alert-danger" >
+						This is a secondary alert—check it out!
+					  </div> -->
+
+				<h3>Upload Image</h3>
+			</div>
+			<div class="card-body">
+				<form >
+					<div class="input-group form-group">
+						<input type="file" name="image"  class="form-control" accept="image/*"  (change)="onFile($event.target.files)" required>
+					</div>
+					<br>
+					<div class="form-group">
+						<button style="cursor: pointer; background-color: #E74292; color: wheat; font-weight: bold;" type="submit"    class="form-control" (click)="onsubmit()" > Upload  </button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br><br>
+
+
+
+<!-- (ngSubmit)="onsubmit()" #f="ngForm" -->
+<!-- (change)="onFile($event)"  -->

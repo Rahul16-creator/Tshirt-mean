@@ -1,0 +1,39 @@
+<br><br>
+
+
+<div class="loader" *ngIf="loading"></div>
+
+<div class="custom" *ngIf="!edit && !loading">
+    <h2 style="text-align: center;">Order List</h2>
+
+<br>
+<br><br><table class="table table-striped">
+    <thead>
+      <tr>
+        <!-- <th scope="col">image</th> -->
+        <th scope="col">Product-Name</th>
+        <th scope="col">Amount-status</th>
+        <th scope="col">shipping-status</th>
+        <th scope="col">delivery-status</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of products">
+      <tr>
+        <!-- <td><img  src="{{product.img}}" style="width: 120px; height: 80px;"  alt="not working"></td> -->
+        <td>{{product.name}} </td>
+        <td><span class="badge badge-success"> $ paid  </span></td>
+
+        <td *ngIf="ship"><span class="badge badge-success"> shipped </span></td>
+        <td *ngIf="!ship"><span class="badge badge-danger"> not shipped </span></td>
+
+        <td *ngIf="delivery"><span class="badge badge-success"> delivered </span></td>
+        <td *ngIf="!delivery"><span class="badge badge-danger"> Not delivered </span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+

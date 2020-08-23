@@ -1,0 +1,57 @@
+
+
+
+
+<div class="container">
+	<a routerLink="/manage-product" class="btn btn-outline-success btn-sm pull-left">Inventory</a>
+	<div class="clearfix"></div>
+    <div class="d-flex justify-content-center h-100">
+		<div class="card">
+            
+			<div class="card-header" >
+                
+					<!-- <div class="alert alert-success" >
+						This is a secondary alert—check it out!
+					  </div>
+
+					  <div class="alert alert-danger" >
+						This is a secondary alert—check it out!
+					  </div> -->
+
+				<h3>Create Products</h3>
+			</div>
+			<div class="card-body">
+				<form (ngSubmit)="onsubmit()" #f='ngForm'>
+					<div class="input-group form-group">
+						<input type="text" name="name"  class="form-control" placeholder="Product-Name...."   required ngModel>
+					</div>
+					<div class="input-group form-group">
+						<textarea rows="5" name="description" class="form-control" placeholder="description..." required ngModel > </textarea>
+					</div>
+					<div class="input-group form-group">
+						<input type="number" name="price"  class="form-control" placeholder="Price...."   required ngModel>
+					</div>
+					<div class="input-group form-group">
+						<input type="number" name="stock"  class="form-control" placeholder="Stock..."   required ngModel>
+					</div>
+
+					<!-- <div class="input-group form-group">
+						<input type="file" name="file"  class="form-control" placeholder="Select file"    ngModel>
+					</div> -->
+
+					<select  class="form-control"  name="categoty"> 
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+						</select>
+					<br>
+					<div class="form-group">
+						<button style="cursor: pointer; background-color: #E74292; color: wheat; font-weight: bold;" type="submit"   [disabled]="f.invalid"  class="form-control"> Add-products  </button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br><br>
